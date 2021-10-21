@@ -68,6 +68,7 @@ void els(struct lista *l)
         {
             aux->k=NULL;
 
+
         }
         aux=aux->next;
 
