@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1634828022 source:c:\xampp\htdocs\data-structures\ds2\main.c
+	<stdio.h>
+	<stdlib.h>
+
