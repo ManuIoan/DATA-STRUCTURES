@@ -86,5 +86,6 @@ int main()
 	l=init_l();
 	els(l);
     tipar(l);
+    printf("This");
     return 0;
 }
