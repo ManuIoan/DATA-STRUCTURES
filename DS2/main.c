@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<malloc.h>
 
+
+struct lista *l1=NULL, *l2=NULL, *l3=NULL;
 //The struct that define the linked list
 struct lista{
 int k;
@@ -60,21 +63,21 @@ void tipar(struct lista *l)
 
 
 //17
-struct lista* suma_2(struct lista *p1, struct lista *p2)
+struct lista* suma_2(struct lista *l1, struct lista *l2)
 {
- struct lista *p3=NULL, *aux1, *aux2, *aux3;
- aux1=p1;
- aux2=p2;
+ struct lista  *aux1, *aux2, *aux3;
+ aux1=l1;
+ aux2=l2;
  while(aux1 && aux2)
  {
 
      aux3=(struct lista *)malloc(sizeof(struct lista));
        aux3->k= aux2->k+aux1->k;
-       aux3->next = p3;
-       p3=  aux3;
-       aux1->next;
-       aux2->next;
-
+       aux3->next = l3;
+       l3=  aux3;
+       aux1=aux1->next;
+       aux2=aux2->next;
+      printf("%d", aux1->k);
 
 
  }
@@ -82,22 +85,22 @@ struct lista* suma_2(struct lista *p1, struct lista *p2)
     {
         aux3=(struct lista *)malloc(sizeof(struct lista));
         aux3->k = aux1->k;
-        aux3->next = p3;
-        p3 = aux3;
-        aux1->next;
+        aux3->next = l3;
+        l3 = aux3;
+        aux1=aux1->next;
     }
 
     while(aux2)
     {
         aux3=(struct lista *)malloc(sizeof(struct lista));
         aux3->k = aux2->k;
-        aux3->next = p3;
-        p3 = aux3;
-        aux2->next;
+        aux3->next = l3;
+        l3 = aux3;
+        aux2=aux2->next;
     }
 
 
-    return p3;
+    return l3;
 
 }
 
@@ -125,14 +128,14 @@ void els(struct lista *l)
 
 int main()
 {
-    struct lista *l=NULL, *p=NULL, *s=NULL;
 
-	l=init_l();
-	 tipar(l);
-	p=init_l();
-	 tipar(p);
-	s=suma_2(l,p);
-	tipar(s);
+
+	l1=init_l();
+	 tipar(l1);
+	l2=init_l();
+	 tipar(l2);
+	l3=suma_2(l1,l2);
+	tipar(l3);
 
 
     return 0;
